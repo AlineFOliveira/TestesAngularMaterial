@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ReactiveFormsModule, FormControl, FormGroup, Validators } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [MatFormFieldModule, MatButtonModule],
+  imports: [MatFormFieldModule, MatButtonModule, MatInputModule, ReactiveFormsModule, CommonModule ],
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss'
 })
@@ -17,7 +19,7 @@ export class FormComponent {
 
   onSubmit() { //ao clicar no botao
     if (this.myForm.valid) {
-      console.log('Form Submitted!', this.myForm.value);
+      console.log('Form Submitted! Amem', this.myForm.value);
     }
   }
 }

@@ -1,0 +1,13 @@
+<form>
+    <mat-form-field appearance="fill">
+        <mat-label>Nome: </mat-label>
+        <input matInput formControlName="name">
+        <mat-error *ngIf="myForm.get('name')?.hasError('required')">
+            O nome é obrigatório
+        </mat-error>
+        <mat-error *ngIf="myForm.get('name')?.hasError('minlength')">
+            O nome deve ter pelo menos 3 caracteres
+        </mat-error>
+    </mat-form-field>
+    <button mat-raised-button type="submit" [disabled]="myForm.invalid">Enviar</button>
+</form>

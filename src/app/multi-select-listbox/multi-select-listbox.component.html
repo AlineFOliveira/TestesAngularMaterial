@@ -1,0 +1,10 @@
+<div class="listbox-container">
+    <label class="listbox-label" id="fav-cuisine-label">
+      Favorite cuisines
+    </label>
+    <ul cdkListbox cdkListboxMultiple aria-labelledby="fav-cuisine-label" class="listbox">
+      <li *ngFor="let cuisine of cuisines; let i = index" [cdkOption]="cuisine" class="option">
+        {{ cuisine }}
+      </li>
+    </ul>
+  </div>
